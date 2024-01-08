@@ -19,7 +19,7 @@ def readme():
 
 setup(name='pulumi_gke',
       python_requires='>=3.7',
-      version=VERSION,
+      version='0.0.1',
       long_description=readme(),
       long_description_content_type='text/markdown',
       packages=find_packages(),

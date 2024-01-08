@@ -8,7 +8,7 @@ from setuptools.command.install import install
 from subprocess import check_call
 
 
-VERSION = "0.0.2"
+VERSION = "0.0.3"
 def readme():
     try:
         with open('README.md', encoding='utf-8') as f:
@@ -19,7 +19,7 @@ def readme():
 
 setup(name='pequod_gke',
       python_requires='>=3.7',
-      version=VERSION,
+      version='0.0.1',
       long_description=readme(),
       long_description_content_type='text/markdown',
       packages=find_packages(),

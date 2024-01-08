@@ -2,6 +2,7 @@ bin
 VERSION
 .pulumi
 sdk/**/bin/
+!/sdk/python/**
 **/obj/
 **/node_modules/
 vendor/

@@ -1,6 +1,6 @@
 VERSION         := 0.0.1
 
-PACK            := gke 
+PACK            := gke
 ORG							:= pulumi-pequod
 PROJECT         := github.com/${ORG}/${PACK}
 
@@ -84,10 +84,11 @@ build_nodejs_sdk:: gen_nodejs_sdk
 		yarn install && \
 		yarn run tsc --version && \
 		yarn run tsc && \
-		cp -R scripts/ bin && \
 		cp ../../README.md ../../LICENSE package.json yarn.lock ./bin/ && \
 		sed -i.bak -e "s/\$${VERSION}/$(VERSION)/g" ./bin/package.json && \
 		rm ./bin/package.json.bak
+
+# cp -R scripts/ bin && 
 
 install_nodejs_sdk:: build_nodejs_sdk
 	yarn link --cwd ${WORKING_DIR}/sdk/nodejs/bin

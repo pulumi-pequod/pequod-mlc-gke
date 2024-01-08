@@ -13,7 +13,7 @@ _utilities.register(
  {
   "pkg": "gke",
   "mod": "index",
-  "fqn": "pulumi_gke",
+  "fqn": "pequod_gke",
   "classes": {
    "gke:index:Cluster": "Cluster"
   }
@@ -25,7 +25,7 @@ _utilities.register(
  {
   "pkg": "gke",
   "token": "pulumi:providers:gke",
-  "fqn": "pulumi_gke",
+  "fqn": "pequod_gke",
   "class": "Provider"
  }
 ]

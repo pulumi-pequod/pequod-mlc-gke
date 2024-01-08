@@ -8,7 +8,7 @@ from setuptools.command.install import install
 from subprocess import check_call
 
 
-VERSION = "0.0.0"
+VERSION = "0.0.2"
 def readme():
     try:
         with open('README.md', encoding='utf-8') as f:
@@ -17,14 +17,14 @@ def readme():
         return "gke Pulumi Package - Development Version"
 
 
-setup(name='pulumi_gke',
+setup(name='pequod_gke',
       python_requires='>=3.7',
       version=VERSION,
       long_description=readme(),
       long_description_content_type='text/markdown',
       packages=find_packages(),
       package_data={
-          'pulumi_gke': [
+          'pequod_gke': [
               'py.typed',
               'pulumi-plugin.json',
           ]

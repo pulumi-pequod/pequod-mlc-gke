@@ -33,16 +33,21 @@
     },
     "language": {
         "csharp": {
+            "packageName": "pequod.Gke",
             "packageReferences": {
                 "Pulumi": "3.*",
                 "Pulumi.Gcp": "7.*"
-            }
+            },
+            "respectSchemaVersion": true
         },
         "go": {
             "generateResourceContainerTypes": true,
-            "importBasePath": "github.com/pulumi-pequod/pequod-mlc-gke/sdk/go/cluster"
+            "importBasePath": "github.com/pulumi-pequod/pequod-mlc-gke/sdk/go/cluster",
+            "respectSchemaVersion": true
+
         },
         "nodejs": {
+            "packageName": "@pequod/gke",
             "dependencies": {
                 "@pulumi/gcp": "^7.0.0",
                 "@pulumi/pulumi": "^3.0.0"
@@ -55,13 +60,16 @@
             "scripts": {
                 "build": "tsc",
                 "install": "node scripts/install-pulumi-plugin.js resource gke ${VERSION}"
-            }
+            },
+            "respectSchemaVersion": true
         },
         "python": {
+            "packageName": "pequod_gke",
             "requires": {
                 "pulumi": ">=3.0.0,<4.0.0",
                 "pulumi-gcp": ">=7.0.0,<8.0.0"
-            }
+            },
+            "respectSchemaVersion": true
         }
     }
 }

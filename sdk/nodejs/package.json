@@ -1,5 +1,5 @@
 {
-    "name": "@pulumi/gke",
+    "name": "@pequod/gke",
     "version": "${VERSION}",
     "scripts": {
         "build": "tsc"

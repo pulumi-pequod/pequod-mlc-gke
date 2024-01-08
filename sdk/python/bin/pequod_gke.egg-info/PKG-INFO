@@ -1,3 +1,9 @@
+Metadata-Version: 2.1
+Name: pequod-gke
+Version: 0.0.2
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
 # Pequod GKE Multilanguage Component
 This multilanguage component abstracts the creation of a GKE cluster and related resources.
 

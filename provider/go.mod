@@ -1,4 +1,4 @@
-module github.com/pulumi/pulumi-xyz
+module github.com/pulumi/pulumi-pequod-gke
 
 go 1.21
 

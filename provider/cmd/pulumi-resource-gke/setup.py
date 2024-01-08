@@ -2,7 +2,7 @@ from distutils.core import setup
 import os.path
 
 
-PKG = 'xyz_provider'
+PKG = 'gke_provider'
 
 
 def read_version():
@@ -14,12 +14,12 @@ def read_version():
 setup(
     name=PKG,
     version=read_version(),
-    description='XYZ Pulumi Provider',
+    description='GKE Pulumi Pequod Provider',
     packages=[PKG],
     package_data={PKG: ['py.typed', 'VERSION', 'schema.json']},
     zip_safe=False,
     install_requires=[
         'pulumi>=3.0.0',
-        'pulumi_aws>=5.0.0',
+        'pulumi_gcp>=7.0.0',
     ],
 )

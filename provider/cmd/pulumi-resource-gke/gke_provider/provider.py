@@ -18,14 +18,14 @@ from pulumi import Inputs, ResourceOptions
 from pulumi.provider import ConstructResult
 import pulumi.provider as provider
 
-import xyz_provider
-from xyz_provider.staticpage import StaticPage, StaticPageArgs
+import gke_provider
+from gke_provider.cluster import Cluster, ClusterArgs 
 
 
 class Provider(provider.Provider):
 
     def __init__(self) -> None:
-        super().__init__(xyz_provider.__version__, xyz_provider.__schema__)
+        super().__init__(gke_provider.__version__, gke_provider.__schema__)
 
     def construct(self,
                   name: str,
@@ -33,23 +33,22 @@ class Provider(provider.Provider):
                   inputs: Inputs,
                   options: Optional[ResourceOptions] = None) -> ConstructResult:
 
-        if resource_type == 'xyz:index:StaticPage':
-            return _construct_static_page(name, inputs, options)
+        if resource_type == 'gke:index:Cluster':
+            return _construct_cluster(name, inputs, options)
 
         raise Exception(f'Unknown resource type {resource_type}')
 
 
-def _construct_static_page(name: str,
+def _construct_cluster(name: str,
                            inputs: Inputs,
                            options: Optional[ResourceOptions] = None) -> ConstructResult:
 
     # Create the component resource.
-    static_page = StaticPage(name, StaticPageArgs.from_inputs(inputs), dict(inputs), options)
+    cluster = Cluster(name, ClusterArgs.from_inputs(inputs), dict(inputs), options)
 
     # Return the component resource's URN and outputs as its state.
     return provider.ConstructResult(
-        urn=static_page.urn,
+        urn=cluster.urn,
         state={
-            'bucket': static_page.bucket,
-            'websiteUrl': static_page.website_url
+            'kubeconfig': cluster.kueconfig,
         })

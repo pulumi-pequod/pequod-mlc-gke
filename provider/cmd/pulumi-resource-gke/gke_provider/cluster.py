@@ -20,7 +20,7 @@ from pulumi_aws import s3
 import pulumi
 
 
-class StaticPageArgs:
+class ClusterArgs:
 
     index_content: pulumi.Input[str]
     """The HTML content for index.html."""
@@ -33,7 +33,7 @@ class StaticPageArgs:
         self.index_content = index_content
 
 
-class StaticPage(pulumi.ComponentResource):
+class Cluster(pulumi.ComponentResource):
     bucket: s3.Bucket
     website_url: pulumi.Output[str]
 

@@ -33,7 +33,7 @@ class Provider(provider.Provider):
                   inputs: Inputs,
                   options: Optional[ResourceOptions] = None) -> ConstructResult:
 
-        if resource_type == 'gke:index:Cluster':
+        if resource_type == 'pequod:gke:Cluster':
             return _construct_cluster(name, inputs, options)
 
         raise Exception(f'Unknown resource type {resource_type}')

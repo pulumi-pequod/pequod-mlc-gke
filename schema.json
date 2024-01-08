@@ -1,7 +1,7 @@
 {
     "name": "gke",
     "resources": {
-        "gke:index:Cluster": {
+        "pequod:gke:Cluster": {
             "isComponent": true,
             "inputProperties": {
                 "masterVersion": {

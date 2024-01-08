@@ -19,7 +19,7 @@ def readme():
 
 setup(name='pequod_gke',
       python_requires='>=3.7',
-      version='0.0.1',
+      version=VERSION,
       long_description=readme(),
       long_description_content_type='text/markdown',
       packages=find_packages(),

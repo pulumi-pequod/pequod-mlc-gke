@@ -20,6 +20,10 @@ export class Cluster extends pulumi.ComponentResource {
     }
 
     /**
+     * GKE cluster name
+     */
+    public /*out*/ readonly cluster_name!: pulumi.Output<string>;
+    /**
      * K8s cluster kubeconfig.
      */
     public /*out*/ readonly kubeconfig!: pulumi.Output<string>;
@@ -38,8 +42,10 @@ export class Cluster extends pulumi.ComponentResource {
             resourceInputs["masterVersion"] = args ? args.masterVersion : undefined;
             resourceInputs["nodeCount"] = args ? args.nodeCount : undefined;
             resourceInputs["nodeMachineType"] = args ? args.nodeMachineType : undefined;
+            resourceInputs["cluster_name"] = undefined /*out*/;
             resourceInputs["kubeconfig"] = undefined /*out*/;
         } else {
+            resourceInputs["cluster_name"] = undefined /*out*/;
             resourceInputs["kubeconfig"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

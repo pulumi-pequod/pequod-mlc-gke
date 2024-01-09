@@ -13,6 +13,12 @@ namespace Pulumi.Gke
     public partial class Cluster : global::Pulumi.ComponentResource
     {
         /// <summary>
+        /// GKE cluster name
+        /// </summary>
+        [Output("cluster_name")]
+        public Output<string> Cluster_name { get; private set; } = null!;
+
+        /// <summary>
         /// K8s cluster kubeconfig.
         /// </summary>
         [Output("kubeconfig")]

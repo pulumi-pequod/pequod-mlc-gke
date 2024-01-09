@@ -21,12 +21,17 @@
             "requiredInputs": [
             ],
             "properties": {
+                "cluster_name": {
+                    "type": "string",
+                    "description": "GKE cluster name"
+                },
                 "kubeconfig": {
                     "type": "string",
                     "description": "K8s cluster kubeconfig."
                 }
             },
             "required": [
+                "cluster_name",
                 "kubeconfig"
             ]
         }

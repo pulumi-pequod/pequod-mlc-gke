@@ -14,6 +14,8 @@ import (
 type Cluster struct {
 	pulumi.ResourceState
 
+	// GKE cluster name
+	Cluster_name pulumi.StringOutput `pulumi:"cluster_name"`
 	// K8s cluster kubeconfig.
 	Kubeconfig pulumi.StringOutput `pulumi:"kubeconfig"`
 }
@@ -138,6 +140,11 @@ func (o ClusterOutput) ToClusterOutput() ClusterOutput {
 
 func (o ClusterOutput) ToClusterOutputWithContext(ctx context.Context) ClusterOutput {
 	return o
+}
+
+// GKE cluster name
+func (o ClusterOutput) Cluster_name() pulumi.StringOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.Cluster_name }).(pulumi.StringOutput)
 }
 
 // K8s cluster kubeconfig.

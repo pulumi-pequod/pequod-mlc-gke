@@ -124,6 +124,7 @@ class Cluster(pulumi.ComponentResource):
             __props__.__dict__["master_version"] = master_version
             __props__.__dict__["node_count"] = node_count
             __props__.__dict__["node_machine_type"] = node_machine_type
+            __props__.__dict__["cluster_name"] = None
             __props__.__dict__["kubeconfig"] = None
         super(Cluster, __self__).__init__(
             'gke:index:Cluster',
@@ -131,6 +132,14 @@ class Cluster(pulumi.ComponentResource):
             __props__,
             opts,
             remote=True)
+
+    @property
+    @pulumi.getter
+    def cluster_name(self) -> pulumi.Output[str]:
+        """
+        GKE cluster name
+        """
+        return pulumi.get(self, "cluster_name")
 
     @property
     @pulumi.getter

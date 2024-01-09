@@ -48,6 +48,7 @@ class ClusterArgs:
 
 
 class Cluster(pulumi.ComponentResource):
+    cluster_name: pulumi.Output[str]
     kubeconfig: pulumi.Output[str]
 
     def __init__(self,
@@ -120,7 +121,9 @@ users:
         """.format(info[2]['cluster_ca_certificate'], info[1], '{0}_{1}_{2}'.format(project, zone, info[0])))
 
         self.kubeconfig = pulumi.Output.secret(k8s_config)
+        self.cluster_name = k8s_cluster.name
 
         self.register_outputs({
+            'cluster_name': self.cluster_name,
             'kubeconfig': self.kubeconfig
         })

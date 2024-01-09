@@ -38,7 +38,7 @@ class ClusterArgs:
 
     def __init__(self, 
                  master_version: pulumi.Input[str],
-                 node_count: pulumi.Input[str],
+                 node_count: pulumi.Input[int],
                  node_machine_type: pulumi.Input[str]) -> None:
 
         self.master_version = master_version

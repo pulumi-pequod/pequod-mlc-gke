@@ -23,11 +23,11 @@ import pulumi
 
 class ClusterArgs:
 
-    master_version: pulumi.Input[str]
+    master_version: pulumi.Input[str] = None
     """The k8s version for the GKE cluster."""
-    node_count: pulumi.Input[int]
+    node_count: pulumi.Input[int] = None
     """The initial node count for the GKE cluster."""
-    node_machine_type: pulumi.Input[str]
+    node_machine_type: pulumi.Input[str] = None
     """The machine type for the GKE cluster."""
 
     @staticmethod

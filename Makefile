@@ -1,4 +1,4 @@
-VERSION         := 0.0.5
+VERSION         := 0.0.7
 
 PACK            := gke
 ORG							:= pulumi-pequod
@@ -15,7 +15,7 @@ SRC             := provider/cmd/pulumi-resource-${PACK}
 
 generate:: gen_go_sdk gen_dotnet_sdk gen_nodejs_sdk gen_python_sdk
 
-build:: build_provider build_dotnet_sdk build_nodejs_sdk build_python_sdk
+build:: clean_version build_provider build_dotnet_sdk build_nodejs_sdk build_python_sdk
 install:: install_dotnet_sdk install_nodejs_sdk
 
 
@@ -44,6 +44,10 @@ bin/run-provider.py:			${SRC}/run-provider.py
 
 bin/%:
 	cp -f $< $@
+
+
+clean_version:
+	rm ${SRC}/${PACK}_provider/VERSION
 
 ${SRC}/${PACK}_provider/VERSION:
 	echo "${VERSION}" > ${SRC}/${PACK}_provider/VERSION

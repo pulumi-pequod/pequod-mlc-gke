@@ -51,4 +51,5 @@ def _construct_cluster(name: str,
         urn=cluster.urn,
         state={
             'kubeconfig': cluster.kubeconfig,
+            'cluster_name': cluster.cluster_name,
         })

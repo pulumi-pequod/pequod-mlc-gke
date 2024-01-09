@@ -122,8 +122,12 @@ users:
         """.format(info[2]['cluster_ca_certificate'], info[1], '{0}_{1}_{2}'.format(project, zone, info[0])))
 
         self.kubeconfig = pulumi.Output.secret(k8s_config)
-        self.cluster_name = k8s_cluster.name
-        self.cluster_name.apply(lambda name: print(f"self.cluster_name: {name}"))
+
+        def get_name(id):
+            name_array = id.split("/")
+            return name_array[len(name_array)-1]
+        cluster_name = k8s_cluster.id.apply(lambda id: get_name(id))
+        self.cluster_name = cluster_name
 
         self.register_outputs({
             'cluster_name': self.cluster_name,

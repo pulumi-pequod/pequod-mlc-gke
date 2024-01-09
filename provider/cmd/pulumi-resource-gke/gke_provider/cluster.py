@@ -123,6 +123,7 @@ users:
 
         self.kubeconfig = pulumi.Output.secret(k8s_config)
         self.cluster_name = k8s_cluster.name
+        self.cluster_name.apply(lambda name: print(f"self.cluster_name: {name}"))
 
         self.register_outputs({
             'cluster_name': self.cluster_name,

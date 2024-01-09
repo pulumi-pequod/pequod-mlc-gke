@@ -119,9 +119,8 @@ users:
       provideClusterInfo: true
         """.format(info[2]['cluster_ca_certificate'], info[1], '{0}_{1}_{2}'.format(project, zone, info[0])))
 
-        kubeconfig = pulumi.Output.secret(k8s_config)
-        self.kubeconfig = kubeconfig
+        self.kubeconfig = pulumi.Output.secret(k8s_config)
 
         self.register_outputs({
-            'kubeconfig': kubeconfig
+            'kubeconfig': self.kubeconfig
         })

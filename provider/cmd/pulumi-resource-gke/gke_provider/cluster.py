@@ -32,7 +32,7 @@ class ClusterArgs:
 
     @staticmethod
     def from_inputs(inputs: Inputs) -> 'ClusterArgs':
-        return ClusterArgs(index_content=inputs['master_version', 'node_count', 'node_machine_type'])
+        return ClusterArgs(index_content=inputs['masterVersion', 'nodeCount', 'nodeMachineType'])
 
     def __init__(self, index_content: pulumi.Input[str]) -> None:
         self.index_content = index_content

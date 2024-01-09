@@ -68,6 +68,7 @@ class Cluster(pulumi.ComponentResource):
                                         initial_node_count=1,
                                         remove_default_node_pool=True,
                                         min_master_version=master_version,
+                                        deletion_projection=False,
                                         opts=ResourceOptions(parent=self))
 
         node_pool = container.NodePool(f"{name}-primary-node-pool", 

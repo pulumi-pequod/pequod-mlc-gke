@@ -23,11 +23,11 @@ import pulumi
 
 class ClusterArgs:
 
-    master_version: pulumi.Input[str] = None
+    master_version: pulumi.Input[str] 
     """The k8s version for the GKE cluster."""
-    node_count: pulumi.Input[int] = None
+    node_count: pulumi.Input[int]
     """The initial node count for the GKE cluster."""
-    node_machine_type: pulumi.Input[str] = None
+    node_machine_type: pulumi.Input[str]
     """The machine type for the GKE cluster."""
 
     @staticmethod
@@ -37,9 +37,10 @@ class ClusterArgs:
                            node_machine_type=inputs['nodeMachineType'])
 
     def __init__(self, 
-                 master_version: pulumi.Input[str],
-                 node_count: pulumi.Input[int],
-                 node_machine_type: pulumi.Input[str]) -> None:
+                 master_version: pulumi.Input[str] = None,
+                 node_count: pulumi.Input[int] = None,
+                 node_machine_type: pulumi.Input[str] = None
+                 ) -> None:
 
         self.master_version = master_version
         self.node_count = node_count

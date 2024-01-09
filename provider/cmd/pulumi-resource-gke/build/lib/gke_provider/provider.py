@@ -50,5 +50,5 @@ def _construct_cluster(name: str,
     return provider.ConstructResult(
         urn=cluster.urn,
         state={
-            'kubeconfig': cluster.kueconfig,
+            'kubeconfig': cluster.kubeconfig,
         })

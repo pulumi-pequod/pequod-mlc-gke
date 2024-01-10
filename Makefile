@@ -47,7 +47,7 @@ bin/%:
 
 
 clean_version:
-	rm ${SRC}/${PACK}_provider/VERSION
+	rm -f ${SRC}/${PACK}_provider/VERSION
 
 ${SRC}/${PACK}_provider/VERSION:
 	echo "${VERSION}" > ${SRC}/${PACK}_provider/VERSION
